@@ -8,11 +8,24 @@
     <packaging>jar</packaging>
     
     <name>bPermissions</name>
-    <url>https://github.com/codename-B/bPermissions</url>
+    <url>https://github.com/Thezomg/bPermissions</url>
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>thezomg-rel</id>
+            <name>maven.thezomg.com Releases</name>
+            <url>http://maven.thezomg.com/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>thezomg-snap</id>
+            <name>maven.thezomg.com Snapshots</name>
+            <url>http://maven.thezomg.com/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
     
     <organization>
         <name>BananaCode</name>
@@ -46,7 +59,6 @@
 		<directory>${basedir}/src/</directory>
 		<includes>
 		    <include>plugin.yml</include>
-		    <include>spoutplugin.yml</include>
 		</includes>
 	    </resource>
 	</resources>
