@@ -229,6 +229,17 @@ public class YamlWorld extends World {
 		MetaData.sort(users);
 		
 		for (Calculable user : users) {
+			if (user.getGroups().size() == 1) {
+				boolean skip = false;
+				Set<String> gs = user.getGroupsAsString();
+				for (String s : gs) {
+					if (s.equalsIgnoreCase(def)) {
+						skip = true;
+					}
+				}
+				continue;
+				
+			}
 			String name = user.getName();
 			uconfig.set(USERS + "." + name + "." + PERMISSIONS, user.serialisePermissions());
 			uconfig.set(USERS + "." + name + "." + GROUPS, user.serialiseGroups());
