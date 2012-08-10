@@ -237,7 +237,9 @@ public class YamlWorld extends World {
 						skip = true;
 					}
 				}
-				continue;
+				if (skip) {
+					continue;
+				}
 				
 			}
 			String name = user.getName();
